@@ -10,25 +10,43 @@ interface Data {
   icon?: ReactNode
 }
 
+const textStyle = {
+  fontFamily: 'Changa, sans-serif',
+}
+
 export const data: Data[] = [
   {
-    title: 'Easy Accessable',
-    description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore',
+    title: 'سهولة الوصول',
+    description: 'دوس أوت إيور دولور في ريبرهينديريت إن فولوبتات فيليت إيس سيلوم دولور',
     icon: <ArtTrackIcon />,
   },
   {
-    title: 'More Affordable Cost',
-    description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore',
+    title: 'تكلفة أكثر توفيرًا',
+    description: 'دوس أوت إيور دولور في ريبرهينديريت إن فولوبتات فيليت إيس سيلوم دولور',
     icon: <AttachMoneyIcon />,
   },
   {
-    title: 'Flexible Study Time',
-    description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore',
+    title: 'وقت دراسة مرن',
+    description: 'دوس أوت إيور دولور في ريبرهينديريت إن فولوبتات فيليت إيس سيلوم دولور',
     icon: <LocalLibraryIcon />,
   },
   {
-    title: 'Consultation With Mentor',
-    description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore',
+    title: 'استشارة مع مرشد',
+    description: 'دوس أوت إيور دولور في ريبرهينديريت إن فولوبتات فيليت إيس سيلوم دولور',
     icon: <ContactSupportIcon />,
   },
 ]
+
+export const DataList = () => {
+  return (
+    <div>
+      {data.map((item, index) => (
+        <div key={index} style={textStyle}>
+          <h2>{item.title}</h2>
+          <p>{item.description}</p>
+          {item.icon}
+        </div>
+      ))}
+    </div>
+  )
+}
